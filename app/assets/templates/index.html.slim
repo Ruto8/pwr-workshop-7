@@ -2,16 +2,13 @@ div ng-repeat="dig in digs"
   div ng-if="editedDigID != dig.id"
     table
       tr
-        td
-          button type="button" ng-click="vote(dig, 1)" +1
-        td
-          button type="button" ng-click="vote(dig, -1)" -1
-        td
-          | {{ dig.rating }}
+        dg-vote
 
     h4
       a ui-sref="dig({id: dig.id})" ng-bind="dig.title"
     span ng-bind="dig.body"
+    br
+    span ng-bind="dig.updated_at | customDate"
 
     button type="button" ng-click="edit(dig)" Edit
     button type="button" ng-click="destroy(dig)" &times;

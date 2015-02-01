@@ -28,6 +28,5 @@ angular.module('DigApp').controller 'DigsCtrl', ($scope, Dig, digs) ->
 
   $scope.vote = (dig, amount) ->
     Dig.vote(dig, amount).success (response) ->
-      console.log response
       dig.rating += amount
 

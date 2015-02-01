@@ -11,7 +11,14 @@ html ng-app="DigApp"
       '  |
       a href="/" INDEX
       hr
-      div ui-view=""
+      div ng-controller='WhenVotedCtrl'
+        span ng-show='whenUpVoted' ng-bind='whenUpVoted | customDate'
+        span ng-hide='whenUpVoted' Jeszcze nie głosowałeś na plus
+        br
+        span ng-show='whenDownVoted' ng-bind='whenDownVoted | customDate'
+        span ng-hide='whenDownVoted' Jeszcze nie głosowałeś na minus
+        hr
+        div ui-view=""
 
       = javascript_include_tag 'application'
       = js_env
